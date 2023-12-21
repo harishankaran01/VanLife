@@ -1,0 +1,41 @@
+.product_details{
+    margin: 2rem;
+}
+.product_details img{
+    width: 100%;
+    border-radius: 15px;
+}
+.product_details h3{
+margin: 10px auto;
+}
+   
+.product_details h3 span{
+    opacity: 0.8;
+}
+.details .btn{
+    margin: 2rem;
+}
+.details .btn  button{
+    width: 100%;
+    padding: 20px;
+    font-size: 1.1rem;
+    background-color: #FF8C38;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+
+}
+.product_details p{
+    text-align: justify;
+}
+.details .product_details button {
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin: 10px auto;
+    padding: 5px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #FFEAD0;
+}
