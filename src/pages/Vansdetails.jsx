@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Data1 from '../Data1';
-import Nav from '../components/Nav';
+
 import "./Vansdetails.css"
-import Footer from '../components/Footer';
+
 
 export default function Vansdetails() {
     const param=useParams();
@@ -33,10 +33,10 @@ export default function Vansdetails() {
     console.log(data);
   return (
     <div className='details'>
-      <Nav/>
+
        {data!="**"? <div>{data}
        <div className='btn'><button>Rent this van </button></div>
-       <Footer/></div>:<h1>Data Not Found</h1>}
+       </div>:<h1>Data Not Found</h1>}
     </div>
   )
 }

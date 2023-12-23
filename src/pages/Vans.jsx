@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../components/Nav';
+
 import { Link } from 'react-router-dom';
 import Data1 from "../Data1"
 import "./Vans.css"
@@ -15,7 +15,8 @@ export default function Vans() {
   let data1=Data1.map(data=>{
       let back={
     "backgroundColor": data.type=="simple" ?  "#E17654": data.type=="rugged"?" #115E59": " #161616"}
-     return  <div key={data.id} className='product'><Link to={`/vans/${data.id}`}>
+     return  <div key={data.id} className='product'>
+      <Link to={`/vans/${data.id}`}>
       <img src={data.imageUrl}/>
       <h1>{data.name}</h1>
       <h3>${data.price}/day</h3>
@@ -24,12 +25,9 @@ export default function Vans() {
   })
 
   return (
-    <div>
-  <Nav/>
+    <div >
+<h1 className='vansss'>Explore our van options</h1>
   <div className='container1'> {data1}</div>
- 
-
-
-    </div>
+ </div>
   )
 }

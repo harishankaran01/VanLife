@@ -4,22 +4,17 @@
 
   background-color: #FFF7ED; ;
 }
+.site{
+  min-height: 100vh;
+}
 .section_padding{
   padding: 3rem 6rem;
 }
-@media(max-width:1000px){
-  .section_padding{
-    padding: 2rem 4rem;
-  }
-}
-@media(max-width:550px){
-  .section_padding{
-    padding: 1rem 2rem;
-  }
-}
+
 ul{
   display: flex;
-  gap: 20px;
+  justify-content: space-around;
+  gap: 100px;
 }
 .nav h1 a{
   font-size: 25.35px;
@@ -30,18 +25,28 @@ ul{
 ul li {
   list-style-type: none;
 }
-ul li a:hover{
+
+.Act{
+  font-size: 1.2rem;
+  color: #FF8C38;
   text-decoration: underline;
 }
+ul li a:hover{
+  text-decoration: underline;
+  font-size:1.2rem;
+  font-weight: bold;
+}
 ul li a{
+  display: block;
   font-weight: 600;
   font-size: 1rem;
   line-height: 58.92px;
   color: #4d4d4d;
+  
   text-decoration: none;
 }
 .content{
-  height: 82vh;
+  height: 100vh;
   background: url(./assets/Images/image53.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -64,7 +69,7 @@ button a{
   color: #000000;
 }
 .footer{
-  background-color: #252525;
+background-color: #252525;
   color: #AAAAAA;
   height: 75px;
   display: flex;
@@ -111,4 +116,149 @@ h6 {
   border-radius: 10px;
   background-color: #000000;
   color: #fff;
+}
+.Host{
+  margin: 10px 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.Hostvans{
+  margin: 2rem;
+}
+
+ .livan a{
+  background-color: #fff;
+  height: 200px;
+  display: flex;
+  gap: 10px;
+  margin: 1rem auto;
+  border-radius: 5px;
+  text-decoration: none;
+    color: #000000;
+}
+
+.listedvan{
+  display: flex;
+  flex-direction: column;
+}
+
+.livan a img{
+  width: 20%;
+  margin: 15px 20px;
+  border-radius: 10px;
+}
+
+.livan .col h2{
+  margin: 10px 0px 5px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.livan a .col h6{
+  margin-bottom: 10px;
+  text-decoration: none;
+    color: #000000;
+}
+
+.livan .col .description{
+  margin-top: 0px;
+  text-decoration: none;
+    color: #000000;
+}
+
+.livan .col{
+  display: flex;
+  flex-direction: column;
+}
+.description{
+  display: flex;
+  flex-direction: column;
+  margin: auto 1rem auto auto;
+}
+.description p{
+  margin: 0px auto;
+  text-align: justify;
+  text-decoration: none;
+    color: #000000;
+}
+.description button {
+  outline: none;
+  border: none;
+  padding: 5px;
+  width: 100px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+ 
+  border-radius: 5px;
+  color: #FFEAD0;
+} 
+@media(max-width:1300px) {
+  a .description p {
+    font-size: 15px;
+  }
+}
+@media(max-width:1230px) {
+  .livan a{
+    height: 230px;
+  }
+}
+
+@media(max-width:1000px) {
+  .section_padding {
+    padding: 2rem 4rem;
+  }
+ a .description p{
+  display: none;
+ }
+ a .description {
+  margin: 0px;
+  width: 120px;
+  height: 100px;
+}
+ .livan a {
+   height: 150px;
+ }
+ .livan a img{
+  width: 15%;
+ }
+  ul {
+    gap: 40px;
+  }
+}
+@media(max-width:800px){
+  
+  
+    .livan a img {
+      width: 20%;
+    }
+}
+@media(max-width:650px){
+  .livan a img {
+      width: 20%;
+    }
+    .livan a{
+          height: 120px;
+        }
+}
+@media(max-width:650px){
+a .description {
+    display: none;
+  }
+}
+
+@media(max-width:550px) {
+  .section_padding {
+    padding: 1rem 2rem;
+  }
+.livan a img {
+  width: 30%;
+}
+
+.livan a {
+  height: 120px;
+}
+  ul {
+    gap: 20px;
+  }
 }
