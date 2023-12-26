@@ -1,18 +1,24 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
-import Data1 from "../Data1"
-import "./Vans.css"
+
+import "./Vans.css";
+
 
 
 export default function Vans() {
-  // React.useEffect(()=>{
-  //   fetch("/api/vans")
-  //      .then(get1 => get1.json())
-  //         .then(data=> console.log(data));
-  // },[])
- 
-  let data1=Data1.map(data=>{
+    let[data2,setData2]=React.useState([]);
+    React.useEffect(()=>{
+        fetch("/api/vans")
+        .then(res=> res.json())
+        .then(data=> setData2(data.vans))
+        .catch(err=>console.log(err))  
+     
+
+    },[])
+    console.log(data2);
+
+  let data1=data2.map(data=>{
       let back={
     "backgroundColor": data.type=="simple" ?  "#E17654": data.type=="rugged"?" #115E59": " #161616"}
      return  <div key={data.id} className='product'>

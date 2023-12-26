@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Vans from "./pages/Vans";
 import Vansdetails from "./pages/Vansdetails";
-import {createServer} from "miragejs"
+import "../server"
 import Nav from "./components/Nav";
 import Host from "./pages/Host";
 import Dashboard from "./components/Host/Dashboard";
@@ -12,15 +12,10 @@ import Income from "./components/Host/Income";
 import Review from "./components/Host/Review";
 import HostVans from "./components/Host/HostVans";
 import Hostvandetails from "./components/Host/Hostvandetails";
-createServer(
-  {
-    Routes(){
-      this.get("/api/user",()=>{
-        return [];
-      })
-    }
-  }
-)
+import Detail from "./components/Host/Detail";
+import Pricing from "./components/Host/Pricing";
+import Photos from "./components/Host/Photos";
+
 
 
 export default function App() {
@@ -37,7 +32,11 @@ export default function App() {
       <Route  index  element={<Dashboard/>} />
       <Route path="income" element={<Income/>} />
       <Route path="vans" element={<HostVans/>} />
-      <Route path="vans/:id" element={<Hostvandetails/>} />
+      <Route path="vans/:id" element={<Hostvandetails/>} >
+       <Route index element={<Detail/>}/>
+       <Route path="pricing" element={<Pricing/>}/>
+       <Route path="photos" element={<Photos/>}/>
+      </Route>
       <Route path="review" element={<Review/>} />
     </Route>
     </Route>
