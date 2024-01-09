@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams,NavLink } from 'react-router-dom';
+import { useParams,NavLink,useSearchParams} from 'react-router-dom';
 import "./HostVans.css";
 import { Outlet } from 'react-router-dom';
 import "./HostVans.css"
@@ -7,6 +7,7 @@ import "./HostVans.css"
 
 
 export default function Hostvandetails() {
+
   let [currentVan,setCurrentVan]=React.useState([])
   let parm=useParams()
   React.useState(()=>{
