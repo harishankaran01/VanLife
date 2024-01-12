@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams,NavLink,useSearchParams} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import "src/components/Host/Hostvans.css"
+import "./Hostvans.css"
 
 
 

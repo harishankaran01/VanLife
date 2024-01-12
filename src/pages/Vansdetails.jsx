@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,NavLink } from 'react-router-dom';
 
 
 import "./Vansdetails.css"
@@ -25,8 +25,12 @@ export default function Vansdetails() {
   return (
     <div className='details'>
       { data ?
+      <div>
+          <NavLink to=".." relative='path' className='back-button'>&larr; back to the files</NavLink>
       <div key={data.id} className="product_details"> 
+        
       <div className='prod_image'>
+            
         <img src={data.imageUrl}/></div>
         <div className='prod_cont'>
         <button style={back}>{data.type}</button>
@@ -36,8 +40,10 @@ export default function Vansdetails() {
           <div className='btn'>
               <button>Rent this van</button></div>
               </div>
-    </div> :
+    </div> 
+        </div>:
       <h2>Loading...</h2>
+      
       }
    
        

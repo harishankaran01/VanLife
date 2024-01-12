@@ -33,16 +33,28 @@ let check=typefilter?data2.filter(prev=> prev.type===typefilter):data2
       <button style={back}>{data.type}</button>
       </Link></div>;
   })
+  function handleFilter(key,value){
+    setSearchParams(prev=>{
+      if(value===null){
+        prev.delete(key)
+      }
+      else{
+        prev.set(key,value)
+      }
+      return prev
+    })
+
+  }
 
   return (
     <div >
 <h1 className='vansss'>Explore our van options</h1>
 <div className='filter'>
-        <button onClick={()=> setSearchParams({type:"simple"})} style={{ backgroundColor:"#E17654"}}>Simple</button>
+        <button onClick={()=>handleFilter("type","simple")} style={{ backgroundColor:"#E17654"}}>Simple</button>
   
-        <button onClick={() => setSearchParams({ type: "rugged" })} style={{ backgroundColor: "#115E59" }}>Rugged</button>
-        <button onClick={() => setSearchParams({ type: "luxury" })} style={{ backgroundColor: "#161616" }}>Luxury</button>
-        <button onClick={() => setSearchParams({ })} to="">Clear</button>
+        <button onClick={() => handleFilter( "type", "rugged" )} style={{ backgroundColor: "#115E59" }}>Rugged</button>
+        <button onClick={() => handleFilter( "type", "luxury" )} style={{ backgroundColor: "#161616" }}>Luxury</button>
+        {typefilter ? <button onClick={() => handleFilter("type", null)} >Clear</button>:null} 
 </div>
   <div className='container1'> {data1}</div>
  </div>
