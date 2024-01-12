@@ -50,7 +50,9 @@ i{
     text-decoration: underline;
 }
 .det{
-    margin: 2rem auto;
+    padding: 2rem 1px;
+    display: flex;
+    gap: 20px;
 }
 .host-van-detail-info>h4 {
     font-weight: 700;
@@ -78,4 +80,22 @@ i{
 .host-van-detail-image {
     height: 100px;
     border-radius: 5px;
+}
+@media(max-width:500px){
+.host-van-detail-info-text>h3 {
+        font-size: 1rem;
+    }
+        .host-van-detail-info>h4 {
+            
+            font-size: 10px;
+        
+        }
+}
+@media(max-width:410px){
+    .host-van-detail {
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+        }
+
 }

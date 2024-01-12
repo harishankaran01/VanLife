@@ -1,6 +1,7 @@
 import React from 'react';
 import van from "../assets/Images/image54.png";
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 
 export default function Aboutcontent() {
@@ -14,7 +15,7 @@ export default function Aboutcontent() {
          <div className="box">
           <h2>Your destination is waiting.<br/>
 Your van is ready.</h2>
-<button>Explore our vans</button>
+          <Link to="/vans">   <button>Explore our vans</button></Link>
          </div>
 
       </div>

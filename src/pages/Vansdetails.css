@@ -1,22 +1,31 @@
 .product_details{
-    margin: 2rem;
+    padding: 2rem;
+    gap: 20px;
+    display: flex;
 }
 .product_details img{
-    width: 100%;
+    width: 500px;
+    margin: 10px auto;
     border-radius: 15px;
 }
 .product_details h3{
 margin: 10px auto;
 }
-   
+@media(max-width:1000px){
+    .product_details {
+            display: flex;
+            flex-direction: column;
+        }
+    .product_details .prod_image img {
+            width: 100%;
+            border-radius: 15px;
+        }
+}
 .product_details h3 span{
     opacity: 0.8;
 }
-.details .btn{
-    margin: 2rem;
-}
+
 .details .btn  button{
-    width: 100%;
     padding: 20px;
     font-size: 1.1rem;
     background-color: #FF8C38;

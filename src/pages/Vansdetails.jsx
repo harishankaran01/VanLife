@@ -26,13 +26,16 @@ export default function Vansdetails() {
     <div className='details'>
       { data ?
       <div key={data.id} className="product_details"> 
-        <img src={data.imageUrl}/>
+      <div className='prod_image'>
+        <img src={data.imageUrl}/></div>
+        <div className='prod_cont'>
         <button style={back}>{data.type}</button>
        <h1>{data.name}</h1>
       <h3>${data.price}<span>/day</span></h3>
       <p>{data.description}</p>
           <div className='btn'>
-          <button>Rent this van</button></div>
+              <button>Rent this van</button></div>
+              </div>
     </div> :
       <h2>Loading...</h2>
       }

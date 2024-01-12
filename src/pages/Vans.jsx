@@ -37,6 +37,13 @@ let check=typefilter?data2.filter(prev=> prev.type===typefilter):data2
   return (
     <div >
 <h1 className='vansss'>Explore our van options</h1>
+<div className='filter'>
+        <button onClick={()=> setSearchParams({type:"simple"})} style={{ backgroundColor:"#E17654"}}>Simple</button>
+  
+        <button onClick={() => setSearchParams({ type: "rugged" })} style={{ backgroundColor: "#115E59" }}>Rugged</button>
+        <button onClick={() => setSearchParams({ type: "luxury" })} style={{ backgroundColor: "#161616" }}>Luxury</button>
+        <button onClick={() => setSearchParams({ })} to="">Clear</button>
+</div>
   <div className='container1'> {data1}</div>
  </div>
   )
