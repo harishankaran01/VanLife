@@ -34,9 +34,9 @@ export default function Hostvandetails() {
                     </div>
                 </div>
                 <ul className='det'>
-          <li> <NavLink to="." end className={({ isActive }) => isActive ? 'Act' : null} >Details</NavLink></li>
-          <li><NavLink to="pricing" end className={({ isActive }) => isActive ? 'Act' : null} >pricing</NavLink></li>
-          <li><NavLink to="photos" className={({ isActive }) => isActive ? 'Act' : null} >photos</NavLink></li>
+          <li> <NavLink to="." style={{color:"black"}} end className={({ isActive }) => isActive ? 'Act' : null} >Details</NavLink></li>
+          <li><NavLink to="pricing" style={{ color: "black" }}  className={({ isActive }) => isActive ? 'Act' : null} >pricing</NavLink></li>
+          <li><NavLink to="photos" style={{ color: "black" }} className={({ isActive }) => isActive ? 'Act' : null} >photos</NavLink></li>
           
                 </ul>
         <Outlet context={{ currentVan }}/>
