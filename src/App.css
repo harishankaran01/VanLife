@@ -214,6 +214,10 @@ button a{
   text-decoration: none;
   color: #000000;
 }
+main {
+  margin-bottom: 84px;
+  min-height: 100vh;
+}
 .footer{
 background-color: #252525;
   color: #AAAAAA;
@@ -221,6 +225,8 @@ background-color: #252525;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
+      
 }
 .footer h6{
   font-size: 14px;
