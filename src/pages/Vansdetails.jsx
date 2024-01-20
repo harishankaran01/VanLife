@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams,NavLink } from 'react-router-dom';
+import { useParams,NavLink,useLocation } from 'react-router-dom';
 
 
 import "./Vansdetails.css"
@@ -7,7 +7,8 @@ import "./Vansdetails.css"
 
 export default function Vansdetails() {
     const param=useParams();
- 
+    let location=useLocation();
+  
      let[data,setData]=React.useState(0);
     React.useEffect(()=>{
         fetch(`/api/vans/${param.id}`)
@@ -20,13 +21,14 @@ export default function Vansdetails() {
     },[param.id])
         let back={
     "backgroundColor": data.type=="simple" ?  "#E17654": data.type=="rugged"?" #115E59": " #161616"}
-   
-     
+  
+  let type = location.state?.search||null;
+  let vansfilter=location.state?.type|| "all"
   return (
     <div className='details'>
       { data ?
       <div>
-          <NavLink to=".." relative='path' className='back-button'>&larr; back to the files</NavLink>
+          <NavLink to={`..?${type}`}  relative='path' className='back-button'>&larr; back to {vansfilter} vans</NavLink>
       <div key={data.id} className="product_details"> 
         
       <div className='prod_image'>
