@@ -1,8 +1,10 @@
 import React from 'react';
 
 import { Link,useLoaderData } from 'react-router-dom';
+import { requireAuth } from "D:/ReactProjects/Vanlife/src/Utils.js"
 import { getHostVans } from '../../Api';
-export function loader() {
+export async function loader() {
+  await requireAuth()
   return getHostVans();
 
 }
@@ -28,7 +30,7 @@ export default function HostVans() {
   return (
     <div className='Hostvans'>
         <h1>Your listed vans</h1>
-        <div className='listedvan'>{data.length > 0 ? data :<h2>Loading....</h2>}</div>
+        <div className='listedvan'>{ data}</div>
     </div>
   )
 }

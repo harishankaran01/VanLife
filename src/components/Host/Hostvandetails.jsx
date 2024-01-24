@@ -2,8 +2,10 @@ import React from 'react';
 import { useParams,NavLink,useLoaderData} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import "./Hostvans.css"
+import { requireAuth } from "D:/ReactProjects/Vanlife/src/Utils.js"
 import { getHostVans } from '../../Api';
-export function loader({params}) {
+export async function loader({params}) {
+  await requireAuth();
 return getHostVans(params.id);
 }
 

@@ -21,23 +21,26 @@ import Detail from "./components/Host/Detail";
 import Pricing from "./components/Host/Pricing";
 import Photos from "./components/Host/Photos";
 import Notfound from "./components/Notfound";
+import Login, {loader as loginLoader} from "./pages/Login";
+import { requireAuth } from "./Utils";
 
 let routees=createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Nav />}>
     <Route index element={<Home />} />
     <Route path="About" element={<About />} />
+    <Route path="login" element={<Login />} loader={loginLoader} />
     <Route path="vans" element={<Vans />} loader={Vanloader} errorElement={<RouteError1 />}/>
     <Route path="vans/:id" element={<Vansdetails />} loader={Vansdetailsloader} errorElement={<RouteError1 />} />
-    <Route path="Host" element={<Host />}>
-      <Route index element={<Dashboard />} />
-      <Route path="income" element={<Income />} />
+    <Route path="Host" element={<Host />} >
+      <Route index element={<Dashboard />} loader={async () => await requireAuth()} />
+      <Route path="income" element={<Income />} loader={async () => await requireAuth()} />
       <Route path="vans" element={<HostVans />} loader={HostVansloader} errorElement={<RouteError1 />} />
       <Route path="vans/:id" element={<Hostvandetails />} loader={HostVansdetailsloader} errorElement={<RouteError1 />} >
-        <Route index element={<Detail />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="photos" element={<Photos />} />
+        <Route index element={<Detail />} loader={async () => await requireAuth()} />
+        <Route path="pricing" element={<Pricing />} loader={async () => await requireAuth()} />
+        <Route path="photos" element={<Photos />} loader={async () => await requireAuth()} />
       </Route>
-      <Route path="review" element={<Review />} />
+      <Route path="review" element={<Review />} loader={async () => await requireAuth()} />
     </Route>
     <Route path="*" element={<Notfound />} />
   </Route>
