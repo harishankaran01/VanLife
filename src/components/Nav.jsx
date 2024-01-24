@@ -21,9 +21,9 @@ export default function Nav() {
           
     </div>
         {nav1 ? <ul className='xl fade-in-top'>
-            <li><NavLink to="/Host" className={({ isActive }) => isActive ? "Act" : null} >Host</NavLink></li>
-            <li><NavLink to="/About" className={({ isActive }) => isActive ? "Act" : null}>About</NavLink></li>
-            <li><NavLink to="/Vans" className={({ isActive }) => isActive ? "Act" : null} >Vans</NavLink></li>
+          <li><NavLink to="/Host" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null} >Host</NavLink></li>
+          <li><NavLink to="/About" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null}>About</NavLink></li>
+          <li><NavLink to="/Vans" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null} >Vans</NavLink></li>
           </ul> : null}
     <div className='navbtn'>
           <div onClick={() => setNav1(prev => !prev)}> {nav1 ? <RiCloseLine size={30} /> : <RiMenu3Line size={30} />}</div>

@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link,useLoaderData } from 'react-router-dom';
+import { getHostVans } from '../../Api';
+export function loader() {
+  return getHostVans();
 
+}
 export default function HostVans() {
-    let[data1,setData1]=React.useState([]);
-    React.useEffect(()=>{
-      fetch("/api/host/vans")
-      .then(res=>res.json())
-      .then(res=>setData1(res.vans))
-    },[])
+  let data1=useLoaderData();
+   
  
     let data=data1.map(data=>{
         let back={

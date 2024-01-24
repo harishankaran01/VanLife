@@ -1,20 +1,17 @@
 import React from 'react';
-import { useParams,NavLink,useSearchParams} from 'react-router-dom';
+import { useParams,NavLink,useLoaderData} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import "./Hostvans.css"
+import { getHostVans } from '../../Api';
+export function loader({params}) {
+return getHostVans(params.id);
+}
 
 
 
 export default function Hostvandetails() {
-
-  let [currentVan,setCurrentVan]=React.useState([])
-  let parm=useParams()
-  React.useState(()=>{
-    fetch(`/api/host/vans/${parm.id}`)  
-    .then(res=>res.json())
-    .then(res=>setCurrentVan(res.vans))
-
-  },[])
+ let  currentVan=useLoaderData();
+  
    let back={
     "backgroundColor": currentVan.type=="simple" ?  "#E17654": currentVan.type=="rugged"?" #115E59": " #161616"}
   return (

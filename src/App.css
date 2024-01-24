@@ -62,7 +62,38 @@ a{
   -webkit-animation: fade-in-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-
+/* Notfound.css*/
+.Notfound{
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.Notfound button a{
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+.Notfound button{
+  background-color: #252525;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 10px 100px;
+ 
+}
+@media(max-width:500px){
+  .Notfound button{
+    padding: 10px 50px;
+  }
+}
+@media(max-width:350px){
+  .Notfound button{
+    padding: 10px 30px;
+  }
+}
+/*Notfound.css */
 
 @-webkit-keyframes fade-in-top {
   0% {
@@ -192,7 +223,7 @@ text-align: center;
     }
 }
 .content{
-  height: 100vh;
+min-height: 100vh;
   background: url(./assets/Images/image53.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -225,7 +256,7 @@ background-color: #252525;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
+margin-top: none;
       
 }
 .footer h6{
@@ -400,6 +431,7 @@ a .description {
 }
 
 @media(max-width:550px) {
+  
   .section_padding {
     padding: 1rem 2rem;
   }
@@ -413,4 +445,5 @@ a .description {
   ul {
     gap: 20px;
   }
+ 
 }
