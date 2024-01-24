@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link,useLoaderData } from 'react-router-dom';
-import { requireAuth } from "D:/ReactProjects/Vanlife/src/Utils.js"
+import { requireAuth } from "/src/Utils.js"
 import { getHostVans } from '../../Api';
 export async function loader() {
   await requireAuth()
