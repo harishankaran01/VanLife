@@ -3,8 +3,8 @@ import React from 'react';
 import { Link,useLoaderData } from 'react-router-dom';
 import { requireAuth } from "/src/Utils.js"
 import { getHostVans } from '../../Api';
-export async function loader() {
-  await requireAuth()
+export async function loader({request}) {
+  await requireAuth(request)
   return getHostVans();
 
 }

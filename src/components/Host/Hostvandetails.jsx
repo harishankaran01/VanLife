@@ -4,8 +4,8 @@ import { Outlet } from 'react-router-dom';
 import "./Hostvans.css"
 import { requireAuth } from "/src/Utils.js"
 import { getHostVans } from '../../Api';
-export async function loader({params}) {
-  await requireAuth();
+export async function loader({params,request}) {
+  await requireAuth(request);
 return getHostVans(params.id);
 }
 
