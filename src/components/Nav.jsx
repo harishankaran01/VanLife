@@ -17,7 +17,9 @@ export default function Nav() {
         <li><NavLink to="/Host" className={({isActive})=> isActive ? "Act":null} >Host</NavLink></li>
         <li><NavLink to="/About"className={({isActive})=>isActive ? "Act":null}>About</NavLink></li>
         <li><NavLink to="/Vans" className={({isActive})=> isActive ? "Act":null} >Vans</NavLink></li>
-        { JSON.parse(localStorage.getItem("loggin")) ?<li><NavLink to="/" className={({ isActive }) => isActive ? "Act" : null} >Log out</NavLink></li>:"" }
+        { JSON.parse(localStorage.getItem("loggin")) ?<li><NavLink to="/" onClick={() => {
+                localStorage.setItem("loggin",false)
+                setNav1(prev => !prev)}}  className={({ isActive }) => isActive ? "Act" : null} >Log out</NavLink></li>:"" }
     </ul>
           
     </div>
