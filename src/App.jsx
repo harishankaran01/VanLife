@@ -31,9 +31,9 @@ let routees=createBrowserRouter(createRoutesFromElements(
     <Route path="login" element={<Login />} loader={loginLoader} action={loginAction} />
     <Route path="vans" element={<Vans />} loader={Vanloader} errorElement={<RouteError1 />}/>
     <Route path="vans/:id" element={<Vansdetails />} loader={Vansdetailsloader} errorElement={<RouteError1 />} />
-    <Route path="Host" element={<Host />}  >
+    <Route path="Host" element={<Host />} >
       <Route index element={<Dashboard />} loader={async ({request}) => await requireAuth(request)} />
-      <Route path="income" element={<Income />} loader={async ({ request }) => await requireAuth(request)} />
+      <Route path="income" element={<Income />} loader={async () => await requireAuth(request)} />
       <Route path="vans" element={<HostVans />} loader={HostVansloader} errorElement={<RouteError1 />} />
       <Route path="vans/:id" element={<Hostvandetails />} loader={HostVansdetailsloader} errorElement={<RouteError1 />} >
         <Route index element={<Detail />} loader={async ({request}) => await requireAuth(request)} />
