@@ -17,13 +17,17 @@ export default function Nav() {
         <li><NavLink to="/Host" className={({isActive})=> isActive ? "Act":null} >Host</NavLink></li>
         <li><NavLink to="/About"className={({isActive})=>isActive ? "Act":null}>About</NavLink></li>
         <li><NavLink to="/Vans" className={({isActive})=> isActive ? "Act":null} >Vans</NavLink></li>
+        { JSON.parse(localStorage.getItem("loggin")) ?<li><NavLink to="/" className={({ isActive }) => isActive ? "Act" : null} >Log out</NavLink></li>:"" }
     </ul>
           
     </div>
-        {nav1 ? <ul className='xl fade-in-top'>
+        {nav1 ? <ul className='xl fade-in-left'>
           <li><NavLink to="/Host" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null} >Host</NavLink></li>
           <li><NavLink to="/About" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null}>About</NavLink></li>
           <li><NavLink to="/Vans" onClick={() => setNav1(prev => !prev)} className={({ isActive }) => isActive ? "Act" : null} >Vans</NavLink></li>
+          { JSON.parse(localStorage.getItem("loggin")) ?<li><NavLink to="/" onClick={() => {
+                localStorage.setItem("loggin",false)
+                setNav1(prev => !prev)}}  className={({ isActive }) => isActive ? "Act" : null} >Log out</NavLink></li>:"" }
           </ul> : null}
     <div className='navbtn'>
           <div onClick={() => setNav1(prev => !prev)}> {nav1 ? <RiCloseLine size={30} /> : <RiMenu3Line size={30} />}</div>
